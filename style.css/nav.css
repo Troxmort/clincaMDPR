@@ -1,0 +1,132 @@
+.nav-container {
+    padding-right: 40px;
+    padding-left: 30px;
+    flex-grow: 1;
+    display: flex;
+    height: 100%;
+    width: 90%;
+    margin: 0 auto;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.nav-logo {
+    height: 140px;
+    width: 190px;
+    object-fit: cover;
+    margin: 0 !important;
+    padding: 0;
+}
+
+.nav-input,
+.nav-label {
+    display: none;
+}
+.nav-menu {
+    display: grid;
+    grid-auto-flow: column;
+    gap: 1em;
+}
+
+.nav-item {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    text-transform: uppercase;
+    color: rgb(82, 82, 82);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    --clippy: polygon(0 0, 0 0, 0 100%, 0% 100%);
+}
+
+.nav-item::after {
+    content: "";
+    display: block;
+    background: #3e83eb !important;
+    width: 100%;
+    margin-top: 3px;
+    height: 2px;
+    clip-path: var(--clippy);
+    transition: clip-path 0.3s;
+}
+
+.nav-item:hover {
+    color: rgb(82, 82, 82);
+    --clippy: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+.menu-btn {
+    display: none; 
+}
+
+.nav-botones {
+    display: flex;
+    
+}
+.nav-boton {
+    color: rgb(82, 82, 82);
+    background-color: #78abf8;
+    margin: 0.5rem;
+    text-align: center!important;
+    font-size: 20px;
+}
+
+
+
+@media (max-width: 980px) {
+    
+    .nav-logo {
+        margin-left: 1rem;
+    }
+    .nav-container {
+        justify-content: space-between;
+    }
+    .nav-item:hover {
+        color: var(--ar-color-green-hover);
+        --clippy: polygon(0 0, 0 0, 0 100%, 0% 100%);
+        color: var(--ar-color-green-hover);
+    }
+
+    .nav-label{
+        margin-right: 1rem;
+        display: block;
+        cursor: pointer;
+    }
+    .nav-menu {
+        position: fixed;
+        top: 80px;
+        width: 100%;
+        bottom: 0;
+        color:rgb(82, 82, 82);
+        
+        left: 0;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-direction: column;
+        clip-path: circle(0 at center);
+        transition: clip-path 1s ease-in-out;
+        
+    }
+
+    .nav-botones {
+        display: flex;
+        flex-direction: column;
+    }
+    .menu-btn {
+        flex-direction: row;
+    }
+}
+
+@media (max-width: 480px){
+   .nav-botones{
+    display: none;
+   }
+   .menu-btn {
+    display: flex;
+   }
+}
+
+
+.nav-input:checked + .nav-menu  {
+    clip-path: circle(100% at center);
+}
