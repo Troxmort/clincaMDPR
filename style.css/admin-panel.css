@@ -1,0 +1,8 @@
+.container-title {
+    background-color: rgb(241, 245, 248);
+}
+
+.turn-user {
+    display: inline-block;
+    text-decoration: none;
+}
