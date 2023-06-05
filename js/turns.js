@@ -11,6 +11,7 @@ function agendarTurnos(event) {
         nombre: event.target.elements.nombre.value,
         mail: event.target.elements.mail.value,
         date: event.target.elements.date.value,
+        dni: event.target.elements.dni.valueAsNumber,
         hour: event.target.elements.hour.value,
         id: Date.now()
     }
@@ -21,6 +22,8 @@ function agendarTurnos(event) {
 
     event.target.reset();
     event.target.elements.nombre.focus();
+
+    swal(`Felicidades ${turnsHTML.nombre}`, 'Su turno se agendo con exito', 'success');
 }
 
 formTurns.addEventListener('submit', (event) => agendarTurnos(event));
