@@ -2,12 +2,12 @@ const usersLocal = JSON.parse(localStorage.getItem('users'));
         //null
 const users = [
     {
-        name: `John Doe`,
-        user: `j.doe`,
+        name: `José Galindo`,
+        user: `j.galindo`,
         email: `johndoe@gmail.com`,
         password: `alfabeta`,
         active: true,
-        role: `ADMIN_ROLE`
+        role: `medico`
     },
     {
         name: `Jose Perez`,
@@ -15,23 +15,16 @@ const users = [
         email: `joseperez@gmail.com`,
         password: `1234`,
         active: true,
-        role: `USER_ROLE`
+        role: `paciente`
     },
-    {
-        name: `Usuario Inactivo`,
-        user: `u.inactivo`,
-        email: `inactivo@gmail.com`,
-        password: `1234`,
-        active: false,
-        role: `USER_ROLE`
-    },
+    
     {
         name: `Maria Gimenez`,
         user: `m.gimenez`,
         email: `mariagimenez@gmail.com`,
         password: `1234`,
-        active: true,
-        role: `USER_ROLE`
+        active: false,
+        role: `medico`
 
     }
    

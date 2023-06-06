@@ -19,14 +19,20 @@ if(!user  || user.password !== passwordInput) {
     return;
 }
 
-swal('Inicio de sesión correcto!', `Bienvenido ${user.name}`, 'success')
+if(user.role != "medico"){
+
+    swal('Error!', 'Usted no está registrado/a como médico', 'error');
+    return;
+}
+
+swal('Inicio de sesión correcto!', `Bienvenido/a ${user.name}`, 'success')
     
     delete user.password;
     localStorage.setItem('currentUser', JSON.stringify(user))
 
    
     setTimeout(() => {
-        window.location.href = '/';
+        window.location.href ="/pages/panel-medico.html";
     }, 2000)
 
 });
