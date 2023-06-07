@@ -16,10 +16,11 @@ function mostrarTurnos(turnRender) {
       </td>
       <td>${turnTable.dni}</td>
       <td>${turnTable.mail}</td>
+      <td>${turnTable.date} </td>
       <td>${turnTable.hour} </td>
       <td>
-        <button class="btn btn-danger" px-1" onclick="borrarPais(${turnTable.id})"> <i class="fa-solid fa-trash"> </i></button>
         <button class="btn btn-success" px-1" onclick="editarPais(${turnTable.id})"> <i class="fa-solid fa-pen-to-square"></i> </i></button>
+        <button class="btn btn-danger" px-1" onclick="borrarTurnos(${turnTable.id})"> <i class="fa-solid fa-trash"> </i></button>
       </td>
       </tr>`;
   
@@ -28,3 +29,17 @@ function mostrarTurnos(turnRender) {
   }
 
   mostrarTurnos(turns);
+
+  function borrarTurnos(idTurnos) {
+  
+    const idTurnoTable = turns.findIndex(turn => turn.id === idTurnos);
+
+    if (idTurnoTable === -1) return swal('Error', 'El pais no se pudo borrar', 'error');
+  
+    turns.splice(idTurnoTable, 1);
+  
+    localStorage.clear('table-turns', JSON.stringify(turns));
+  
+    mostrarTurnos(turns);
+  
+  }

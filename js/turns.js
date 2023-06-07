@@ -13,6 +13,8 @@ function agendarTurnos(event) {
         date: event.target.elements.date.value,
         dni: event.target.elements.dni.valueAsNumber,
         hour: event.target.elements.hour.value,
+        medico: event.target.elements.medico.value,
+        descripcion: event.target.elements.descripcion.value,
         id: Date.now()
     }
 
