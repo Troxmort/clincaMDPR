@@ -19,7 +19,7 @@ function mostrarTurnos(turnRender) {
       <td>${turnTable.date} </td>
       <td>${turnTable.hour} </td>
       <td>
-        <button class="btn btn-success" px-1" onclick="editarPais(${turnTable.id})"> <i class="fa-solid fa-pen-to-square"></i> </i></button>
+        <button class="btn btn-success" px-1" onclick="editarTurno(${turnTable.id})"> <i class="fa-solid fa-pen-to-square"></i> </i></button>
         <button class="btn btn-danger" px-1" onclick="borrarTurnos(${turnTable.id})"> <i class="fa-solid fa-trash"> </i></button>
       </td>
       </tr>`;
@@ -38,8 +38,10 @@ function mostrarTurnos(turnRender) {
   
     turns.splice(idTurnoTable, 1);
   
-    localStorage.clear('table-turns', JSON.stringify(turns));
+    localStorage.setItem('turnos', JSON.stringify(turns));
   
     mostrarTurnos(turns);
   
   }
+
+  
