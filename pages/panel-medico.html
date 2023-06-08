@@ -11,6 +11,65 @@
     
 </head>
 <body class="bg-body-secondary">
+
+
+<!-- Modal -->
+<div class="modal fade" id="ModalTurnos" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="ModalLabel">Editar turno</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form id="turnosForm">
+          <div class="form-group">
+            <label for="nombre">Nombre:</label>
+            <input type="text" class="form-control" id="nombre" name="nombre">
+          </div>
+          <div class="form-group">
+            <label for="dni">DNI:</label>
+            <input type="text" class="form-control" id="dni" name="dni">
+          </div>
+          <div class="form-group">
+            <label for="dia">Día:</label>
+            <input type="text" class="form-control" id="dia" name="dia">
+          </div>
+          <div class="form-group">
+            <label for="fecha">Fecha:</label>
+            <input type="date" class="form-control" id="fecha" name="fecha">
+          </div>
+          <div class="form-group">
+            <label for="hora">Hora:</label>
+            <input type="time" class="form-control" id="hora" name="hora">
+          </div>
+          <div class="form-group">
+            <label for="descripcion">Descripción:</label>
+            <textarea class="form-control" id="descripcion" rows="3" name="descripcion"></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        
+        <button type="button" class="btn btn-primary" onclick="guardarTurno()" data-bs-dismiss="modal">Guardar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   
     <div class="container-xl mt-5 ">
 
@@ -21,10 +80,15 @@
 
 <div class="bg-primary text-white p-3 m-2 rounded">
     <h2 class="text-start pt-2">Turnos asignados</h2>
+  
 
     <div id="nombreMedico">
        
     </div>
+    <button class="btn btn-info text-black" onclick="TodoslosTurnos()">Todos los turnos</button>
+
+
+
 
 </div>
 
@@ -39,42 +103,18 @@
           <tr>
             <th scope="col">#</th>
             <th>Nombre</th>
-            <th>Apellido</th>
+            <th>DNI</th>
             <th>Día</th>
+            <th>Fecha</th>
             <th>Horario</th>
             <th>Motivo consulta</th>
-            <th><i class="fa-solid fa-list-check fa-2x"></i></th>
+            <th><i class="fa-solid fa-gear fa-1x"></i> Opciones</th>
+            
           </tr>
         </thead>
-        <tbody>
-          <!-- Aquí puedes agregar filas con datos -->
-          <tr>
-            <th scope="row">1</th>
-            <td>Sofia</td>
-            <td>Gomez</td>
-            <td>Lunes</td>
-            <td>9:00 AM</td>
-            <td>Fiebre y dolor de garganta</td>
-            <td><button type="button" class="btn btn-primary"><i class="fa-solid fa-check"></i></button></td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Juan</td>
-            <td>Smith</td>
-            <td>Martes</td>
-            <td>14:30 PM</td>
-            <td>dolor de estómago</td>
-            <td><button type="button" class="btn btn-primary"><i class="fa-solid fa-check"></i></button></td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td>Lucas</td>
-            <td>Salas</td>
-            <td>Martes</td>
-            <td>15:30 PM</td>
-            <td>dolor de cabeza</td>
-            <td><button type="button" class="btn btn-primary"><i class="fa-solid fa-check"></i></button></td>
-          </tr>
+        <tbody id="tableBody">
+         
+         
 
         </tbody>
       </table>
