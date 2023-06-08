@@ -1,8 +1,8 @@
 const turnos = [
     {
         "nombre": "Juan Pérez",
-        "dni": "12345678",
-        "id": 1,
+        "dni": 12345678,
+    
         "dia": "Lunes",
         "fecha": "2023-06-12",
         "hora": "09:00",
@@ -10,8 +10,8 @@ const turnos = [
     },
     {
         "nombre": "María López",
-        "dni": "98765432",
-        "id": 2,
+        "dni": 98765432,
+       
         "dia": "Martes",
         "fecha": "2023-06-13",
         "hora": "14:30",
@@ -19,8 +19,8 @@ const turnos = [
     },
     {
         "nombre": "Carlos Rodríguez",
-        "dni": "56789012",
-        "id": 3,
+        "dni": 56789012,
+        
         "dia": "Miércoles",
         "fecha": "2023-06-14",
         "hora": "11:15",
@@ -28,8 +28,8 @@ const turnos = [
     },
     {
         "nombre": "Ana González",
-        "dni": "34567890",
-        "id": 4,
+        "dni": 34567890,
+     
         "dia": "Jueves",
         "fecha": "2023-06-15",
         "hora": "16:00",
@@ -41,7 +41,7 @@ const turnosLocal= JSON.parse(localStorage.getItem('turnos'));
 if(!turnosLocal) {
     localStorage.setItem('turnos', JSON.stringify(turnos));
 }
-
+//turnosLocal= JSON.parse(localStorage.getItem('turnos'));
 
 let editIndex;
 
@@ -78,8 +78,8 @@ function renderizarTabla(arrayturnos)
                                     <td>${turno.hora}</td>
                                     <td>${turno.descripcion}</td>
                                     <td>
-                                    <button class="btn btn-primary" onclick="borrarTurno(${turno.id})"><i class="fa-solid fa-trash"></i></button>
-                                    <button class="btn btn-info" data-bs-toggle="modal" data-bs-target="#ModalTurnos" onclick="editarTurno(${turno.id})"><i class="fa-solid fa-edit"></i></button>
+                                    <button class="btn btn-primary" onclick="borrarTurno(${index})"><i class="fa-solid fa-trash"></i></button>
+                                    <button class="btn btn-info" data-bs-toggle="modal" data-bs-target="#ModalTurnos" onclick="editarTurno(${index})"><i class="fa-solid fa-edit"></i></button>
                                     </td>
                                     
                                 </tr>`;
@@ -88,17 +88,17 @@ function renderizarTabla(arrayturnos)
 
 function TodoslosTurnos()
 {
-    renderizarTabla(turnos);
+    renderizarTabla(turnosLocal);
 }
 
 
 
 
-function editarTurno(id)
+function editarTurno(index)
 {
 
-let turno=turnos.find((turno,idx)=>{
-  if(turno.id === id){
+let turno=turnosLocal.find((turnof,idx)=>{
+  if(idx=== index){
   editIndex= idx;
   return true;
   }
@@ -114,42 +114,9 @@ el.hora.value= turno.hora;
 el.descripcion.value= turno.descripcion;
 
 
-//buttonForm.innerHTML=`  <button type="submit" class="btn btn-info">editar pais</button>`;
-
-
 
 };
 
-
-
-
-
-
-
-
-
-  formTurnos.addEventListener("submit",function(evt)
-{
-
-
-    evt.preventDefault();
-    
-    const el= evt.target.elements;
-    
-      const nuevoPais=
-      {
-        nombre: el.nombre.value,
-        dni: el.ubicacion.value,
-        dia: el.habitantes.valueAsNumber,
-        fecha: el.capital.value,
-        hora: el.imagen.value,
-        continente:el.continente.value,
-        active:el.active.checked,
-        id: Date.now()
-    
-      }
-
-})
 
 
 
@@ -166,8 +133,9 @@ const turnoEditado={
 
 }
 
-turnos[editIndex]=turnoEditado;
-renderizarTabla(turnos);
+turnosLocal[editIndex]=turnoEditado;
+localStorage.setItem('turnos', JSON.stringify(turnosLocal));
+renderizarTabla(turnosLocal);
 editIndex=undefined;
 
 }
