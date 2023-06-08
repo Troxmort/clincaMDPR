@@ -34,7 +34,7 @@ function mostrarTurnos(turnRender) {
   
     const idTurnoTable = turns.findIndex(turn => turn.id === idTurnos);
 
-    if (idTurnoTable === -1) return swal('Error', 'El pais no se pudo borrar', 'error');
+    if (idTurnoTable === -1) return swal('Error', 'El usuario no se pudo encontrar', 'error');
   
     turns.splice(idTurnoTable, 1);
   
