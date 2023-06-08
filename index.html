@@ -4,9 +4,53 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/login.css">
     <title>Clinica MDPR</title>
 </head>
 <body>
-    
+
+    <main>
+        <div class="contenedor-todo">
+        <div class="caja-atras">
+            <div class="caja-atras-login">
+                <h3>¿Ya tienes una cuenta?</h3>
+                <p>Inicia sesión para ingresar en la página</p>
+                <button id="btn-iniciar-sesion">Iniciar sesión</button>
+            </div>
+            <div class="caja-atras-registro">
+                <h3>¿No tienes una cuenta?</h3>
+                <p>Regístrate para que puedas iniciar sesión</p>
+                <button id="btn-registrarse">Registrarse</button>
+            </div>
+        </div>
+
+   <!--Formulario de login y registro-->
+
+        <div class="contenedor-login-registro">
+
+            <!--Login-->
+            <form action="" class="formulario-login">
+              <h2>Iniciar sesión</h2>
+              <input type="text" name="correo" id="" placeholder="Correo electrónico">
+               <input type="password" name="contraseña" id="" placeholder="Contraseña">
+               <button>Ingresar</button>
+            </form>
+
+           <!--Registro-->
+            <form action="" class="formulario-registro">
+                <h2>Registarse</h2>
+                <input type="text" name="Nombre" id="" placeholder="Nombre completo">
+                <input type="text" name="Correo" id="" placeholder="Correo electrónico">
+                <input type="text" name="Usuario" id="" placeholder="Usuario">
+                <input type="password" name="contraseña" id="" placeholder="Contraseña">
+                <input type="password" name="contraseña" id="" placeholder="Repetir contraseña">
+                <button>Registrarse</button>
+            </form>
+        </div>
+
+        </div>
+    </main>
+
+    <script src="/js/login.js"></script>
 </body>
 </html>
