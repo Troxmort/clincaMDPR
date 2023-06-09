@@ -37,11 +37,70 @@
             <tbody id="table-turns">
             </tbody>
         </table>
+
+        <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">New message</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="form-turn">
+                            <div class="mb-3">
+                                <label for="nombre" class="form-label">Nombre y apellido</label>
+                                <input type="text" required min="1" max="38" class="form-control" name="nombre"
+                                    id="nombre" placeholder="Victor Herrera">
+                            </div>
+                            <div class="mb-3">
+                                <label for="mail" class="form-label">Correo electronico</label>
+                                <input type="mail" required class="form-control" name="mail" id="mail"
+                                    placeholder="nombre@gmail.com">
+                            </div>
+                            <div class="mb-3">
+                                <label for="dni" class="form-label">DNI</label>
+                                <input type="number" min="7" max="8" required class="form-control" name="dni" id="dni"
+                                    placeholder="12345678">
+                            </div>
+                            <select class="form-select" required name="medico" aria-label="Default select example">
+                                <option selected>Especialidad del medico</option>
+                                <option value="cardiologo">Cardiologo</option>
+                                <option value="dermatologo">Dermatologo</option>
+                                <option value="medicoClinico">Medico Clinico</option>
+                                <option value="nutricionista">Nutricionista</option>
+                                <option value="pediatra">Pediatra</option>
+                                <option value="traumatologo">Traumatologo</option>
+                            </select>
+                            <div class="mb-3">
+                                <label for="date" class="form-label">Escoge una fecha para el turno</label>
+                                <input type="date" required class="form-control" name="date" id="date"
+                                    placeholder="nombre@gmail.com">
+                            </div>
+                            <select class="form-select" required name="hour" aria-label="Default select example">
+                                <option selected>Horarios disponibles</option>
+                                <option value="17:00hs">17:00hs</option>
+                                <option value="17:30hs">17:30hs</option>
+                                <option value="18:00hs">18:00hs</option>
+                                <option value="18:30hs">18:30hs</option>
+                                <option value="19:00hs">19:00hs</option>
+                                <option value="19:30hs">19:30hs</option>
+                            </select>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                        <button type="button" id="editModal" onclick="guardarTurnoEditado()" class="btn btn-success">Editar Turno</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
     </main>
     <footer></footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
         crossorigin="anonymous"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="/js/turns.js"></script>

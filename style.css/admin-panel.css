@@ -3,6 +3,13 @@
 }
 
 .turn-user {
-    display: inline-block;
     text-decoration: none;
 }
+
+.card-container {
+    display: flex;
+    justify-content: center;
+    gap: 8rem;
+    margin-top: 10rem;
+}
+
