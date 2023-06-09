@@ -26,21 +26,33 @@
             <form action="" id="form-turn">
                 <div class="mb-3">
                     <label for="nombre" class="form-label">Nombre y apellido</label>
-                    <input type="text" required min="1" max="38" class="form-control" name="nombre" id="nombre" placeholder="Victor Herrera">
+                    <input type="text" required min="1" max="38" class="form-control" name="nombre" id="nombre"
+                        placeholder="Victor Herrera">
                 </div>
                 <div class="mb-3">
                     <label for="mail" class="form-label">Correo electronico</label>
-                    <input type="mail" required class="form-control" name="mail" id="mail" placeholder="nombre@gmail.com">
+                    <input type="mail" required class="form-control" name="mail" id="mail"
+                        placeholder="nombre@gmail.com">
                 </div>
                 <div class="mb-3">
                     <label for="dni" class="form-label">DNI</label>
                     <input type="number" required class="form-control" name="dni" id="dni" placeholder="12345678">
                 </div>
+                <select class="form-select" required name="medico" aria-label="Default select example">
+                    <option selected>Especialidad del medico</option>
+                    <option value="cardiologo">Cardiologo</option>
+                    <option value="dermatologo">Dermatologo</option>
+                    <option value="medicoClinico">Medico Clinico</option>
+                    <option value="nutricionista">Nutricionista</option>
+                    <option value="pediatra">Pediatra</option>
+                    <option value="traumatologo">Traumatologo</option>
+                </select>
                 <div class="mb-3">
                     <label for="date" class="form-label">Escoge una fecha para el turno</label>
-                    <input type="date" required class="form-control" name="date" id="date" placeholder="nombre@gmail.com">
+                    <input type="date" required class="form-control" name="date" id="date"
+                        placeholder="nombre@gmail.com">
                 </div>
-                <select class="form-select" required name="hour"  aria-label="Default select example">
+                <select class="form-select" required name="hour" aria-label="Default select example">
                     <option selected>Horarios disponibles</option>
                     <option value="17:00hs">17:00hs</option>
                     <option value="17:30hs">17:30hs</option>
@@ -48,7 +60,11 @@
                     <option value="18:30hs">18:30hs</option>
                     <option value="19:00hs">19:00hs</option>
                     <option value="19:30hs">19:30hs</option>
-                  </select>
+                </select>
+                <div class="mb-3">
+                    <label for="descripcion" class="form-label">Motivo de la consulta</label>
+                    <textarea class="form-control" id="descripcion" minlength="20" required maxlength="500" rows="3"></textarea>
+                </div>
                 <button class="btn btn-primary mt-4" type="submit" onclick="">Agendar turno</button>
             </form>
         </div>
