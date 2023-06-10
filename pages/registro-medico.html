@@ -16,7 +16,7 @@
 
       <div class="row d-flex align-content-center justify-content-center">
 
-<div class="col-lg-6 col-8 border border-primary d-flex flex-column bg-light  ">
+<div class="col-lg-6 col-8 border border-primary d-flex flex-column bg-light bg-primary-subtle ">
 
             <h2 class="text-center pt-2">Registrarse</h2>
             
@@ -26,31 +26,43 @@
             <form id="regM-form">
                 <div class="form-group pt-2" >
                     <label for="nombre">
-                      <i class="fa-solid fa-user ps-2 pe-2 pb-2"></i>Nombre</label>
+                      <i class="fa-solid fa-user ps-2 pe-2 pb-2"></i>Nombre y apellido</label>
                     <input required autofocus type="text" class="form-control" id="nombre" placeholder="Ingrese su nombre" name="nombre">
                   </div>
-
-                  <div class="form-group pt-2" >
-                    <label for="apellido">
-                      <i class="fa-solid fa-user ps-2 pe-2 pb-2"></i>Apellido</label>
-                    <input required type="text" class="form-control" id="apellido" placeholder="Ingrese su apellido" name="apellido">
-                  </div>
+<hr>
                   <div class="form-group pt-2" >
                     <label for="mail">
                       <i class="fa-solid fa-envelope ps-2 pe-2 pb-2"></i>Email</label>
                     <input required type="email" class="form-control" id="mail" placeholder="Ingrese su email" name="email">
                   </div>
-
+                  <hr>
+                  <div class="form-group pt-2" >
+                    <label for="dni"><i class="fa-solid fa-address-card ps-2 pe-2 pb-2"></i>Dni</label>
+                    <input required type="number" class="form-control" id="dni" placeholder="Ingrese su documento de identidad" name="dni">
+                  </div>
+                  <hr>
+                  <select class="form-select" required name="especialidad" aria-label="Default select example">
+                    <option selected>Especialidad</option>
+                    <option value="cardiologo">Cardiologo</option>
+                    <option value="dermatologo">Dermatologo</option>
+                    <option value="medicoClinico">Medico Clinico</option>
+                    <option value="nutricionista">Nutricionista</option>
+                    <option value="pediatra">Pediatra</option>
+                    <option value="traumatologo">Traumatologo</option>
+                </select>
+                <hr>
               <div class="form-group pt-2" >
                 <label for="usuario">
                   <i class="fa-solid fa-user ps-2 pe-2 pb-2"></i>Usuario</label>
                 <input required  type="text" class="form-control" id="usuario" placeholder="Ingrese su usuario" name="usuario">
               </div>
+              <hr>
               <div class="form-group pt-2">
                 <label for="contrasena">
                   <i class="fa-solid fa-key ps-2 pe-2 pb-2"></i>Contraseña</label>
                 <input required type="password" class="form-control" id="contrasena" placeholder="Ingrese su contraseña" name="contrasena">
               </div>
+              <hr>
               <div class="text-center">
 <button type="submit" class="btn btn-primary m-3 ">Registrarse <i class="fa-solid fa-right-to-bracket"></i></button>
 

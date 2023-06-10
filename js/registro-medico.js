@@ -2,7 +2,7 @@ const RForm = document.getElementById('regM-form');
 
 let newUser={};
 
-let users= JSON.parse(localStorage.getItem('usersReg'));
+let users= JSON.parse(localStorage.getItem('users'));
 
 if (!users)
 {
@@ -16,16 +16,17 @@ RForm.addEventListener('submit',function(evt){
     const elm = evt.target.elements;
      
     newUser={
-    nombre:elm.nombre.value,
-     apellido:elm.apellido.value,
-     email:elm.email.value,
+     nombre:elm.nombre.value,
+     dni:elm.dni.value,
+     mail:elm.email.value,
      usuario:elm.usuario.value,
      contrasena:elm.contrasena.value,
-     rol:"medico"
+     especialidad:elm.especialidad.value,
+     role:"medico"
     };
 
 users.push(newUser);
-localStorage.setItem('usersReg', JSON.stringify(users));
+localStorage.setItem('users', JSON.stringify(users));
 
 swal('Solicitud enviada!', `pendiente a aprobación`, 'success')
 
@@ -36,4 +37,3 @@ setTimeout(() => {
 
 })
 
-console.log(users);
