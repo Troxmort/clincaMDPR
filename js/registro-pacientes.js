@@ -15,7 +15,7 @@ RForm.addEventListener('submit',function(evt){
     const elm = evt.target.elements;
      
     newUser={
-     nombre:elm.name.value,
+     nombre:elm.nombre.value,
      dni:elm.dni.value,
      mail:elm.email.value,
      usuario:elm.usuario.value,
@@ -29,7 +29,7 @@ localStorage.setItem('users', JSON.stringify(users));
 swal('Solicitud enviada!', `pendiente a aprobación`, 'success')
 
 setTimeout(() => {
-    window.location.href = '/';
+    window.location.href = '/index.html';
 }, 2000)
 
 })
