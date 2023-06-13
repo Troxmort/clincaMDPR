@@ -1,0 +1,39 @@
+.container-carousel img {
+    width: 100%;
+    height: 100%;
+}
+
+.fa-flask-vial, .fa-magnifying-glass, .fa-mug-saucer, .fa-x-ray {
+    font-size: 4rem;
+    text-align: center;
+}
+
+.mar-reset {
+    margin: 0;
+}
+
+.gamaMedica {
+    background-color: rgb(241, 238, 238);
+}
+
+.gamaMedica h2 {
+    font-size: 3rem;
+}
+
+.descripcion p {
+    color: #4eabd5;
+    font-size: 2rem;
+}
+
+.lista-esp {
+    background-color: rgb(241, 238, 238);
+}
+
+.lista-esp h2 {
+    font-size: 3rem;
+}
+
+.lista-esp ul {
+    font-size: 2rem;
+    list-style: none;
+}
