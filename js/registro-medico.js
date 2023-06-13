@@ -2,7 +2,7 @@ const RForm = document.getElementById('regM-form');
 
 let newUser={};
 
-let users= JSON.parse(localStorage.getItem('users'));
+const users= JSON.parse(localStorage.getItem('users')) || [];
 
 if (!users)
 {
@@ -22,7 +22,8 @@ RForm.addEventListener('submit',function(evt){
      usuario:elm.usuario.value,
      contrasena:elm.contrasena.value,
      especialidad:elm.especialidad.value,
-     role:"medico"
+     role:"medico",
+     id: Date.now()
     };
 
 users.push(newUser);

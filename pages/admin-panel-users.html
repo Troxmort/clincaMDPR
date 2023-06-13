@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de administracion - Turnos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/style.css/admin-panel.css">
+</head>
+
+<body>
+    <header></header>
+    <main>
+        <div class="container-title p-2">
+            <div>
+                <h1 class="text-center">Panel de administracion - Turnos</h1>
+            </div>
+        </div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Nombre y apellido</th>
+                    <th scope="col">DNI</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Usuario</th>
+                    <th scope="col">Contraseña</th>
+                    <th scope="col">Especialidad</th>
+                    <th scope="col"><i class="fa-solid fa-gear"></i></th>
+                </tr>
+            </thead>
+            <tbody id="table-register">
+            </tbody>
+        </table>
+
+        <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">New message</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="form-register">
+                            <div class="mb-3">
+                                <label for="nombre" class="form-label">Nombre y apellido</label>
+                                <input type="text" required min="1" max="38" class="form-control" name="nombre"
+                                    id="nombre" placeholder="Victor Herrera">
+                            </div>
+                            <div class="mb-3">
+                                <label for="mail" class="form-label">Correo electronico</label>
+                                <input type="mail" required class="form-control" name="mail" id="mail"
+                                    placeholder="nombre@gmail.com">
+                            </div>
+                            <div class="mb-3">
+                                <label for="dni" class="form-label">DNI</label>
+                                <input type="number" min="7" max="8" required class="form-control" name="dni" id="dni"
+                                    placeholder="12345678">
+                            </div>
+                            <div class="mb-3">
+                                <label for="usuario" class="form-label">Usuario</label>
+                                <input type="text" required class="form-control" name="usuario" id="usuario" placeholder="victorHe123">
+                              </div>
+                              <div class="mb-3">
+                                <label for="contrasena" class="form-label">Contraseña</label>
+                                <input type="password" required class="form-control" name="contrasena" id="contrasena" placeholder="*******">
+                              </div>
+                              
+                            <select class="form-select" required name="especialidad" aria-label="Default select example">
+                                <option selected>Especialidad del medico</option>
+                                <option value="cardiologo">Cardiologo</option>
+                                <option value="dermatologo">Dermatologo</option>
+                                <option value="medicoClinico">Medico Clinico</option>
+                                <option value="nutricionista">Nutricionista</option>
+                                <option value="pediatra">Pediatra</option>
+                                <option value="traumatologo">Traumatologo</option>
+                            </select>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                        <button type="button" id="editModal" onclick="guardarRegisterEditado()" class="btn btn-success">Editar Turno</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </main>
+    <footer></footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="/js/registro-medico.js"></script>
+    <script src="/js/admin-panel-users.js"></script>
+
+</body>
+
+</html>
