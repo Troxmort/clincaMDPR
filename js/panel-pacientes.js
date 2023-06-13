@@ -1,4 +1,4 @@
-const turnos= JSON.parse(localStorage.getItem('turnos'));
+const turno = JSON.parse(localStorage.getItem('turnos'));
 const user = JSON.parse(localStorage.getItem('currentUser'));
 const turnosPacientes=turnos.filter((turno) => turno.paciente===user.especialidad);
 const turnosRest=turnos.filter((turno) => turno.paciente!=user.especialidad);
@@ -19,11 +19,11 @@ let editIndex;
 let turnoEditado={};
 
 const tableBodyHTML = document.getElementById("tableBody");
-const nombreMed=document.getElementById("nombreMedico")
+const nombrePaciente =document.getElementById("nombrePaciente")
 const espMed=document.getElementById("espMedico")
 const formTurnos = document.getElementById("turnosForm");
 
-nombreMed.innerHTML = `<h5 class="text-start">Paciente: ${user.name}</h5>`;
+nombrePaciente.innerHTML = `<h5 class="text-start">Paciente: ${user.name}</h5>`;
 
 
 function renderizarTabla(arrayturnos)
@@ -51,6 +51,7 @@ function renderizarTabla(arrayturnos)
                                     <td>${dias[numeroDia]}</td>
                                     <td>${turno.date}</td>
                                     <td>${turno.hour}</td>
+                                    <td>${turno.medico}</td>
                                     <td>${turno.descripcion}</td>
                                     <td>
                                     <button class="btn btn-primary" onclick="borrarTurno(${turno.id})"><i class="fa-solid fa-trash"></i></button>
@@ -63,13 +64,13 @@ function renderizarTabla(arrayturnos)
 
 function TodoslosTurnos()
 {
-    renderizarTabla(turnosPaciente);
+    renderizarTabla(turnosPacientes);
 }
 
 function editarTurno(id)
 {
 
-let turno=turnosPaciente.find((turnof,idx)=>{
+let turno=turnosPacientes.find((turnof,idx)=>{
   if(turnof.id=== id){
   editIndex= idx;
   return true;
@@ -105,15 +106,15 @@ function guardarTurno()
 
     console.log(turnoEditado);
 const index=turnos.findIndex(turno=>turno.id===turnoEditado.id)
-const index2=turnosPaciente.findIndex(turno=>turno.id===turnoEditado.id)
+const index2=turnosPacientes.findIndex(turno=>turno.id===turnoEditado.id)
 turnos[index]=turnoEditado;
-turnosPaciente[index2]=turnoEditado;
+turnosPacientes[index2]=turnoEditado;
 
 
 localStorage.setItem('turnos', JSON.stringify(turnos));
 
 
-renderizarTabla(turnosPaciente);
+renderizarTabla(turnosPacientes);
 editIndex=undefined;
 
 }
@@ -122,11 +123,11 @@ function borrarTurno(id)
 {
 
     const idx=turnos.findIndex(turno => turno.id===id);
-    const idx2=turnosPaciente.findIndex(turno => turno.id===id);
+    const idx2=turnosPacientes.findIndex(turno => turno.id===id);
     turnos.splice(idx,1);
-    turnosPaciente.splice(idx2,1);
+    turnosPacientes.splice(idx2,1);
     localStorage.setItem('turnos', JSON.stringify(turnos));
-    renderizarTabla(turnosPaciente);
+    renderizarTabla(turnosPacientes);
 }
 
 
@@ -137,12 +138,12 @@ valor= order? 1 : -1;
 
   const collator= new Intl.Collator("es-AR", {sensitivity:"base"});
 
-  turnosPaciente.sort(function(a,b)
+  turnosPacientes.sort(function(a,b)
   {
     if (order) return collator.compare(b.date,a.date);
     return collator.compare(a.date,b.date);
   })
 
-  renderizarTabla(turnosPaciente);
+  renderizarTabla(turnosPacientes);
 
 }
