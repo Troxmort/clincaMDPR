@@ -15,7 +15,7 @@ RForm.addEventListener('submit',function(evt){
     const elm = evt.target.elements;
      
     newUser={
-     nombre:elm.nombre.value,
+     nombre:elm.name.value,
      dni:elm.dni.value,
      mail:elm.email.value,
      usuario:elm.usuario.value,

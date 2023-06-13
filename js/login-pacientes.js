@@ -1,6 +1,6 @@
-const loginMForm = document.getElementById('loginPaciente-form');
+const loginPForm = document.getElementById('loginP-form');
 
-loginMForm.addEventListener('submit', function(evt) {
+loginPForm.addEventListener('submit', function(evt) {
     evt.preventDefault();
     const elm = evt.target.elements;
 const userInput=elm.usuario.value;
@@ -32,7 +32,7 @@ swal('Inicio de sesión correcto!', `Bienvenido/a ${user.name}`, 'success')
 
    
     setTimeout(() => {
-        window.location.href ="/pages/panel-paciente.html";
+        window.location.href ="/pages/panel-pacientes.html";
     }, 2000)
 
 });
