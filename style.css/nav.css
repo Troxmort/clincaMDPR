@@ -4,6 +4,11 @@
     box-sizing: border-box;
 }
 
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
 .nav-container {
     display: flex;
     justify-content: space-evenly;
@@ -82,6 +87,8 @@
     }
     .nav-container {
         justify-content: space-evenly;
+        z-index: 9999;
+        height: 100%;
     }
     .nav-item:hover {
         color: var(--ar-color-green-hover);
@@ -110,9 +117,9 @@
         transition: clip-path 1s ease-in-out;
         
     }
-    hr {
-        display: none;
-    }
+ hr{
+    display: none;
+ }
     .nav-botones {
         display: none;
         flex-direction: column;
@@ -138,3 +145,4 @@
 .nav-input:checked + .nav-menu  {
     clip-path: circle(100% at center);
 }
+
