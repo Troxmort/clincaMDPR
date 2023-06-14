@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS de Bootstrap -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<!-- JavaScript de Bootstrap (requiere jQuery) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="/css/login.css">
+    <title>Clinica MDPR</title>
+</head>
+<body>
+
+    <main>
+        <div class="contenedor-todo">
+        <div class="caja-atras">
+            <div class="caja-atras-login">
+                <h3>¿Ya tienes una cuenta?</h3>
+                <p>Inicia sesión para ingresar en la página</p>
+                <button id="btn-iniciar-sesion">Iniciar sesión</button>
+            </div>
+            <div class="caja-atras-registro">
+                <h3>¿No tienes una cuenta?</h3>
+                <p>Regístrate para que puedas iniciar sesión</p>
+                <button id="btn-registrarse">Registrarse</button>
+            </div>
+        </div>
+
+   <!--Formulario de login y registro-->
+
+        <div class="contenedor-login-registro">
+
+            <!--Login-->
+            <form action="" class="formulario-login" onsubmit="return validarCorreoModal()">
+              <h2>Iniciar sesión</h2>
+              <input type="email" id="forgot-password-email" class="form-control" placeholder="Correo electrónico" required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}">
+
+               <input type="password" name="contraseña" id="passw" placeholder="Contraseña" required>
+               <p><a href="#" id="forgot-password-link">¿Olvidaste tu contraseña?</a></p>
+
+               <button class="button-ingresar">Ingresar</button>
+            </form>
+
+           <!--Registro-->
+            <form action="" class="formulario-registro" onsubmit="return validarCorreo()">
+                <h2>Registarse</h2>
+                <label for="elegir">Seleccionar registro médico o paciente</label>
+                <select name="eleccion" id="elegir" required>
+                    <option value="">Elija una opción</option>
+                    <option value="">Paciente</option>
+                    <option value="">Médico</option>
+                </select>
+                <input type="text" name="Nombre" id="" placeholder="Nombre completo" required>
+                <input type="text" name="Correo" id="correo" placeholder="Correo electrónico" required>
+                <input type="text" name="Usuario" id="" placeholder="Usuario" required>
+                <input type="password" name="contraseña" id="contra1" placeholder="Contraseña" required>
+                <input type="password" name="contraseña" id="contra2" placeholder="Repetir contraseña" required>
+                <button class="button-registrarse" type="submit">Registrarse</button>
+                <p id="mensaje"></p>
+            </form>
+        </div>
+
+        </div>
+    </main>
+
+    <!-- Modal -->
+<div id="forgot-password-modal" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Recuperar contraseña</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>Por favor, ingresa tu dirección de correo electrónico para recuperar tu contraseña:</p>
+          <input type="email" id="forgot-password-email" class="form-control" placeholder="Correo electrónico" required>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+          <button type="button" class="btn btn-primary" id="forgot-password-submit">Recuperar contraseña</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+    
+
+
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="/js/login.js"></script>
+    <!-- <script src="/js/js.js"></script> -->
+</body>
+</html>

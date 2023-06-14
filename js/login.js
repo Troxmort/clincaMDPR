@@ -61,3 +61,56 @@ function registro(){
     }
 
 }
+
+   function validarCorreo() {
+       let correo = document.getElementById("correo").value;
+       let expresion = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;   
+       let mensaje = document.getElementById("mensaje");
+       let contraseña1= document.getElementById("contra1").value;
+       let contraseña2= document.getElementById("contra2").value;
+     
+     
+       if (expresion.test(correo) && contraseña1 === contraseña2) {
+           mensaje.innerHTML = "Contraseñas y correo válidos.";
+           mensaje.style.color = "green";
+           document.getElementsByClassName("formulario-registro").submit();
+         
+
+       } else if(!expresion.test(correo) && contraseña1 === contraseña2){
+           mensaje.innerHTML = "Correo inválido. Ingresa un correo válido, por ejemplo: ejemplo@dominio.com";
+           mensaje.style.color = "red";
+           
+       } else if(contraseña1 !== contraseña2) {
+         mensaje.innerHTML = "Contraseñas inválidas, las 2 contraseñas deben ser iguales."
+         mensaje.style.color = "red";
+    } 
+    return false;
+
+}
+
+
+// import { successAlert } from './js.js';
+// successAlert('hola desde archivo login.js')
+
+//Modal
+document.getElementById("forgot-password-link").addEventListener("click", function(event) {
+    event.preventDefault(); // Evita la acción predeterminada del enlace
+  
+    // Muestra el modal para recuperar la contraseña
+    $('#forgot-password-modal').modal('show');
+  });
+  
+  document.getElementById("forgot-password-submit").addEventListener("click", function(event) {
+    event.preventDefault(); // Evita la acción predeterminada del botón
+  
+    // Aquí puedes agregar tu lógica para enviar la solicitud de recuperación de contraseña al servidor
+    var email = document.getElementById("forgot-password-email").value;
+    console.log("Se ha enviado una solicitud de recuperación de contraseña para el correo electrónico: " + email);
+  
+    // Cierra el modal después de realizar alguna acción (por ejemplo, mostrar un mensaje de éxito)
+    $('#forgot-password-modal').modal('hide');
+  });
+  
+  
+
+
