@@ -5,6 +5,7 @@
 }
 
 .box-footer{
+    margin-top: auto;
     margin: auto;
     justify-content: space-around !important;
     color: rgb(66, 66, 66);
