@@ -1,3 +1,8 @@
+body {
+    display: flex;
+    flex-direction: column;
+}
+
 .container-carousel img {
     width: 100%;
     height: 100%;
