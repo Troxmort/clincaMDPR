@@ -27,22 +27,22 @@
                 <div class="form-group pt-2" >
                     <label for="nombre">
                       <i class="fa-solid fa-user ps-2 pe-2 pb-2"></i>Nombre y apellido</label>
-                    <input required autofocus type="text" class="form-control" id="nombre" placeholder="Ingrese su nombre" name="nombre">
+                    <input minlength="5" maxlength="25" required autofocus type="text" class="form-control" id="nombre" placeholder="Ingrese su nombre" name="nombre">
                   </div>
 <hr>
                   <div class="form-group pt-2" >
                     <label for="mail">
                       <i class="fa-solid fa-envelope ps-2 pe-2 pb-2"></i>Email</label>
-                    <input required type="email" class="form-control" id="mail" placeholder="Ingrese su email" name="email">
+                    <input minlength="5" maxlength="25" required type="email" class="form-control" id="mail" placeholder="Ingrese su email" name="email">
                   </div>
                   <hr>
                   <div class="form-group pt-2" >
                     <label for="dni"><i class="fa-solid fa-address-card ps-2 pe-2 pb-2"></i>Dni</label>
-                    <input required type="number" class="form-control" id="dni" placeholder="Ingrese su documento de identidad" name="dni">
+                    <input minlength="7" maxlength="8" required type="number" class="form-control" id="dni" placeholder="Ingrese su documento de identidad" name="dni">
                   </div>
                   <hr>
                   <select class="form-select" required name="especialidad" aria-label="Default select example">
-                    <option selected>Especialidad</option>
+                    <option value="" selected>Especialidad</option>
                     <option value="cardiologo">Cardiologo</option>
                     <option value="dermatologo">Dermatologo</option>
                     <option value="medicoClinico">Medico Clinico</option>
@@ -54,13 +54,13 @@
               <div class="form-group pt-2" >
                 <label for="usuario">
                   <i class="fa-solid fa-user ps-2 pe-2 pb-2"></i>Usuario</label>
-                <input required  type="text" class="form-control" id="usuario" placeholder="Ingrese su usuario" name="usuario">
+                <input minlength="4" maxlength="25" required  type="text" class="form-control" id="usuario" placeholder="Ingrese su usuario" name="usuario">
               </div>
               <hr>
               <div class="form-group pt-2">
                 <label for="contrasena">
                   <i class="fa-solid fa-key ps-2 pe-2 pb-2"></i>Contraseña</label>
-                <input required type="password" class="form-control" id="contrasena" placeholder="Ingrese su contraseña" name="contrasena">
+                <input minlength="5" maxlength="25" required type="password" class="form-control" id="contrasena" placeholder="Ingrese su contraseña" name="contrasena">
               </div>
               <hr>
               <div class="text-center">

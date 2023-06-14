@@ -7,13 +7,13 @@ const turnosRest=turnos.filter((turno) => turno.medico!=user.especialidad);
 
 
 const dias = [
-        'Domingo',
         'Lunes',
         'Martes',
         'Miércoles',
         'Jueves',
         'Viernes',
         'Sábado',
+        'Domingo'
       ];
 
 let editIndex;
@@ -23,6 +23,7 @@ const tableBodyHTML = document.getElementById("tableBody");
 const nombreMed=document.getElementById("nombreMedico")
 const espMed=document.getElementById("espMedico")
 const formTurnos = document.getElementById("turnosForm");
+const botonBorrar= document.getElementById("botonBorrar");
 
 nombreMed.innerHTML = `<h5 class="text-start">Médico: ${user.name}</h5>`;
 espMed.innerHTML = `<h5 class="text-start">Especialidad: ${user.especialidad}</h5>`;
@@ -54,11 +55,14 @@ function renderizarTabla(arrayturnos)
                                     <td>${turno.hour}</td>
                                     <td>${turno.descripcion}</td>
                                     <td>
-                                    <button class="btn btn-primary" onclick="borrarTurno(${turno.id})"><i class="fa-solid fa-trash"></i></button>
+                                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalborrar" onclick="botonBorrarModal(${turno.id})""><i class="fa-solid fa-trash"></i></button>
                                     <button class="btn btn-info" data-bs-toggle="modal" data-bs-target="#ModalTurnos" onclick="editarTurno(${turno.id})"><i class="fa-solid fa-edit"></i></button>
                                     </td>
                                     
                                 </tr>`;
+
+
+
 })
 }
 
@@ -116,6 +120,11 @@ localStorage.setItem('turnos', JSON.stringify(turnos));
 
 renderizarTabla(turnosMed);
 editIndex=undefined;
+
+}
+
+function botonBorrarModal(id){
+  botonBorrar.innerHTML = `<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button> <button  type="button" class="btn btn-primary" onclick="borrarTurno(${id})">Borrar</button>`
 
 }
 
