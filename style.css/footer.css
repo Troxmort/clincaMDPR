@@ -6,7 +6,6 @@
 
 .box-footer{
     margin-top: auto;
-    margin: auto;
     justify-content: space-around !important;
     color: rgb(66, 66, 66);
     display: flex;
@@ -19,8 +18,7 @@
 .footer-section-logo {
     padding: 1rem;
     margin: auto;
-    justify-content: center;
-    align-items: center;
+    
 }
 
 .img-logo {
@@ -70,7 +68,6 @@
 
 .ul  {
     font-size: 16px;
-    text-align:justify;
 }
 
 .footer-section-contacto {
@@ -79,7 +76,6 @@
     align-items: center;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     
 }
 .svg {
@@ -87,7 +83,7 @@
 }
 
 .footer-copy {
-    /* padding: 0.3rem; */
+    padding: 0.3rem;
    background-color: #8d8d8d;
     text-align: center;
     color: rgb(66, 66, 66);
