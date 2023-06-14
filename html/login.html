@@ -36,14 +36,15 @@
         <div class="contenedor-login-registro">
 
             <!--Login-->
-            <form action="" class="formulario-login" onsubmit="return validarCorreoModal()">
+            <form action="" class="formulario-login">
               <h2>Iniciar sesión</h2>
-              <input type="email" id="forgot-password-email" class="form-control" placeholder="Correo electrónico" required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}">
+              <input type="text" id="usuariosesion" class="form-control" placeholder="Usuario" name="nombre" required>
 
-               <input type="password" name="contraseña" id="passw" placeholder="Contraseña" required>
+               <input type="password" name="password" id="passw" placeholder="Contraseña" required class="form-control">
                <p><a href="#" id="forgot-password-link">¿Olvidaste tu contraseña?</a></p>
+               <p id="mensaje-error" style="color: red;"></p>
 
-               <button class="button-ingresar">Ingresar</button>
+               <button class="loginButton" onclick="redireccion()" >Ingresar</button>
             </form>
 
            <!--Registro-->
@@ -55,11 +56,11 @@
                     <option value="">Paciente</option>
                     <option value="">Médico</option>
                 </select>
-                <input type="text" name="Nombre" id="" placeholder="Nombre completo" required>
-                <input type="text" name="Correo" id="correo" placeholder="Correo electrónico" required>
-                <input type="text" name="Usuario" id="" placeholder="Usuario" required>
-                <input type="password" name="contraseña" id="contra1" placeholder="Contraseña" required>
-                <input type="password" name="contraseña" id="contra2" placeholder="Repetir contraseña" required>
+                <input type="text" name="Nombre" id="" placeholder="Nombre completo" required class="form-control">
+                <input type="text" name="Correo" id="correo" placeholder="Correo electrónico" required class="form-control">
+                <input type="text" name="Usuario" id="" placeholder="Usuario" required class="form-control">
+                <input type="password" name="contraseña" id="contra1" placeholder="Contraseña" required class="form-control">
+                <input type="password" name="contraseña" id="contra2" placeholder="Repetir contraseña" required class="form-control">
                 <button class="button-registrarse" type="submit">Registrarse</button>
                 <p id="mensaje"></p>
             </form>

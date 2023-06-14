@@ -134,7 +134,7 @@ main{
     display: none;
 }
 
-.button-ingresar:hover, .button-registrarse:hover{
+.loginButton:hover, .button-registrarse:hover{
     cursor: pointer;
     background-color: #0077ff;
     color: #ffffff;
