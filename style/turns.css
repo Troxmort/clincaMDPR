@@ -1,0 +1,9 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container-title {
+    background-color: rgb(241, 245, 248);
+}
