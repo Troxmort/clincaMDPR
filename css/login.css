@@ -18,7 +18,8 @@ main{
     width: 100%;
     padding: 20px;
     margin: auto;
-    margin-top: 150px;
+    margin-top: 10em;
+    margin-bottom: 15em;
 }
 
 .contenedor-todo{
